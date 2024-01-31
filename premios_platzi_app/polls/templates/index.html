@@ -3,7 +3,7 @@ Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint 
 {% if questions %}
     <ul>
         {% for question in questions %}
-        <li><a href="/polls/{{ question.id }}">{{ question.question_text }}</a></li>
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
