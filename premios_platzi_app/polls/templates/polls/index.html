@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="{% static 'polls/css/index.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'polls/css/aura.css' %}" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="bar_nav">
+        <nav>
+            <ul>
+                <li><a href="{% url 'polls:index' %}">Home</a></li>
+                <li><a href="#">Example</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <br>
+
+    <h1 style="font-size: 45px; text-align: center;">Polls</h1>
+    <div class="questions">
+        {% if questions %}
+        <ul class="list_ul">
+            {% for question in questions %}
+            <li><a style="text-decoration: none; color: #131a35;"  href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
