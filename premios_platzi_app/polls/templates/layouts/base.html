@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="{% static 'polls/css/index.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bar_nav">
+        <nav>
+            <ul>
+                <li><a href="{% url 'polls:index' %}">Home</a></li>
+                <li><a href="#">Example</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <br>
+
+    {% block content %}
+
+    {% endblock content %}
+
+</body>
+
+</html>
